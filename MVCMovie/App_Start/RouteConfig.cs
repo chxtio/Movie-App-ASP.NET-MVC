@@ -13,6 +13,7 @@ namespace MVCMovie
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // MapRoute- route HTTP requests to correct controller and action method, also used by HtmlHelpers (e.g. ActionLink)
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
