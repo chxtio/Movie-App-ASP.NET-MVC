@@ -9,21 +9,19 @@ namespace MVCMovie.Controllers
     public class HelloWorldController : Controller
     {
         // GET: /HelloWorld/
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            return View();
         }
 
         // GET: /HellowWorld/Welcome/
-        public string Welcome(String name, int ID = 1)
+        public ActionResult Welcome(String name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode($"Hello {name}, ID: {ID}");
+            //return HttpUtility.HtmlEncode($"Hello {name}, ID: {ID}");
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
-
-
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }
